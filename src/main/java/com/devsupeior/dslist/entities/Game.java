@@ -13,18 +13,20 @@ public class Game {
     private String title;
 
     @Column(name = "game_year")
-    private  Integer year;
+    private Integer year;
     private String genre;
     private String platforms;
     private Double score;
     private String imgUrl;
-    private String shortDescrition;
-    private String logDescription;
+    @Column(columnDefinition = "TEXT")
+    private String shortDescription;
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
 
     public Game() {
     }
 
-    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescrition, String logDescription) {
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
@@ -32,8 +34,8 @@ public class Game {
         this.platforms = platforms;
         this.score = score;
         this.imgUrl = imgUrl;
-        this.shortDescrition = shortDescrition;
-        this.logDescription = logDescription;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
     }
 
     public Long getId() {
@@ -72,8 +74,8 @@ public class Game {
         return platforms;
     }
 
-    public void setPlatforms(String platforms) {
-        this.platforms = platforms;
+    public void setPlatforms(String platform) {
+        this.platforms = platform;
     }
 
     public Double getScore() {
@@ -92,20 +94,20 @@ public class Game {
         this.imgUrl = imgUrl;
     }
 
-    public String getShortDescrition() {
-        return shortDescrition;
+    public String getShortDescription() {
+        return shortDescription;
     }
 
-    public void setShortDescrition(String shortDescrition) {
-        this.shortDescrition = shortDescrition;
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
-    public String getLogDescription() {
-        return logDescription;
+    public String getLongDescription() {
+        return longDescription;
     }
 
-    public void setLogDescription(String logDescription) {
-        this.logDescription = logDescription;
+    public void setLongDescription(String logDescription) {
+        this.longDescription = logDescription;
     }
 
     @Override
